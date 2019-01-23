@@ -11,17 +11,25 @@
 </head>
 
 <body>
-    <div class="mainSection">
-        <div class="logoContainer">
-            <img src="assets/img/logo.png">
+
+    <div class="wrapper indexPage">
+
+        <div class="mainSection">
+
+            <div class="logoContainer">
+                <img src="assets/img/logo.png">
+            </div>
+
+            <div class="searchContainer">
+                <form action="search.php" method="GET">
+                    <input type="text" name="term" class="searchBox">
+                    <input type="submit" value="Search" class="searchButton">
+                </form>
+            </div>
+
         </div>
 
-        <div class="searchContainer">
-            <form action="search.php" method="GET">
-                <input type="text" name="term" class="searchBox">
-                <input type="submit" value="Search" class="searchButton">
-            </form>
-        </div>
     </div>
+
 </body>
 </html>
