@@ -63,3 +63,12 @@ html, body {
     max-width: 630px;
     color: #000;
 }
+
+.mainSection .logoContainer {
+    width: 220px;
+    text-align: center;
+}
+
+.logoContainer img {
+    width: 100%;
+}
