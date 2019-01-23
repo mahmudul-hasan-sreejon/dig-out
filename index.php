@@ -3,16 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welcome to Dig-Out</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+
+    <title>Welcome to Dig-Out</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
 
 <body>
     <div class="mainSection">
         <div class="logoContainer">
-            <img src="img/logo.png">
+            <img src="assets/img/logo.png">
         </div>
 
         <div class="searchContainer">
