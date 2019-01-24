@@ -150,3 +150,12 @@ html, body {
 .tabsContainer .tabList li a {
     text-decoration: none;
 }
+
+.tabsContainer .tabList li.active {
+    border-bottom: 3px solid #21759b;
+}
+
+.tabsContainer .tabList li.active a {
+    font-weight: bold;
+    color: #21759b;
+}
