@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Welcome to Dig-Out</title>
+    <title>Dig-Out</title>
 
     <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico" />
     
@@ -19,7 +19,7 @@
             <div class="headerContent">
                 <div class="logoContainer">
                     <a href="index.php">
-                        <img src="assets/img/logo.png">
+                        <img src="assets/img/search-page-logo.png">
                     </a>
                 </div>
 
