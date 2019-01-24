@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Welcome to Dig-Out</title>
+
+    <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico" />
     
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
