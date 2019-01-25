@@ -1,9 +1,9 @@
 <?php
 
-function followLinks($url) {
-    $parser = ($url);
+include("classes/DomDocumentParser.php");
 
-    echo $parser;
+function followLinks($url) {
+    $parser = new DomDocumentParser($url);
 }
 
 $url = "https://www.sreejon.com";
