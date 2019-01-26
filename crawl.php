@@ -5,6 +5,7 @@ include("classes/DomDocumentParser.php");
 
 $alreadyCrawled = array();
 $crawling = array();
+$alreadyFoundImages = array();
 
 function linkExists($url) {
     global $conn;
@@ -60,15 +61,10 @@ function getDetails($url) {
     $keywords = "";
 
     $metaTags = $parser->getMetaTags();
-
     foreach($metaTags as  $meta) {
-        if($meta->getAttribute("name") == "description") {
-            $description = $meta->getAttribute("content");
-        }
+        if($meta->getAttribute("name") == "description") $description = $meta->getAttribute("content");
 
-        if($meta->getAttribute("name") == "keywords") {
-            $keywords = $meta->getAttribute("content");
-        }
+        if($meta->getAttribute("name") == "keywords") $keywords = $meta->getAttribute("content");
     }
 
     $description = str_replace("\n", "", $description);
@@ -78,7 +74,20 @@ function getDetails($url) {
     else if(insertLink($url, $title, $description, $keywords)) echo "Success: $url<br>";
     else echo "Error: Failed to insert $url<br>";
 
-    // echo "url : $url <br>title : $title<br>description : $description<br> keywords : $keywords<br><br>";
+    $imageList = $parser->getImages();
+    foreach($imageList as $image) {
+        $src = $image->getAttribute("src");
+        $alt = $image->getAttribute("alt");
+        $title = $image->getAttribute("title");
+
+        if(!$title && !$alt) continue;
+
+        $src = createLink($src, $url);
+
+        if(!in_array($src, $alreadyFoundImages)) {
+            $alreadyFoundImages[] = $src;
+        }
+    }
 }
 
 function followLinks($url) {
@@ -105,8 +114,6 @@ function followLinks($url) {
             getDetails($href);
         }
         else return;
-
-        // echo $href."<br>";
     }
 
     array_shift($crawling);
