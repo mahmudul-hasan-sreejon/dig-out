@@ -32,7 +32,7 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
             <div class="headerContent">
                 <div class="logoContainer">
                     <a href="index.php">
-                        <img src="assets/img/search-page-logo.png">
+                        <img src="assets/img/search-page-logo.png" title="Dig-Out">
                     </a>
                 </div>
 
