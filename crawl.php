@@ -30,8 +30,25 @@ function getDetails($url) {
 
     if($title == "") return;
 
-    echo "url : $url ,title : $title";
-    echo "<br>";
+    $description = "";
+    $keywords = "";
+
+    $metaTags = $parser->getMetaTags();
+
+    foreach($metaTags as  $meta) {
+        if($meta->getAttribute("name") == "description") {
+            $description = $meta->getAttribute("content");
+        }
+
+        if($meta->getAttribute("name") == "keywords") {
+            $keywords = $meta->getAttribute("content");
+        }
+    }
+
+    $description = str_replace("\n", "", $description);
+    $keywords = str_replace("\n", "", $keywords);
+
+    // echo "url : $url <br>title : $title<br>description : $description<br> keywords : $keywords<br><br>";
 }
 
 function followLinks($url) {
