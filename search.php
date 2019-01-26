@@ -13,11 +13,13 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search the web for sites and images.">
+    <meta name="keywords" content="Dig-Out, Dig, Out, Search Engine, Search, Websites, Images">
+    <meta name="author" content="Mahmudul Hasan Sreejon">
 
     <title>Dig-Out</title>
 
     <link rel="shortcut icon" type="image/ico" href="assets/img/icons/favicon.ico" />
-    
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
 
