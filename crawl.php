@@ -2,6 +2,9 @@
 
 include("classes/DomDocumentParser.php");
 
+$alreadyCrawled = array();
+$crawling = array();
+
 function createLink($src, $url) {
     $scheme = parse_url($url)["scheme"];
     $host = parse_url($url)["host"];
@@ -16,6 +19,9 @@ function createLink($src, $url) {
 }
 
 function followLinks($url) {
+    global $alreadyCrawled;
+    global $crawling;
+
     $parser = new DomDocumentParser($url);
 
     $linkList = $parser->getLinks();
@@ -23,20 +29,23 @@ function followLinks($url) {
     foreach($linkList as $link) {
         $href = $link->getAttribute("href");
 
-        if(strpos($href, "#") !== false) {
-            continue;
-        }
-        else if(substr($href, 0, 11) == "javascript:") {
-            continue;
-        }
-        else if(substr($href, 0, 7) == "mailto:") {
-            continue;
-        }
+        if(strpos($href, "#") !== false) continue;
+        else if(substr($href, 0, 11) == "javascript:") continue;
+        else if(substr($href, 0, 7) == "mailto:") continue;
 
         $href = createLink($href, $url);
 
+        if(!in_array($href, $alreadyCrawled)) {
+            $alreadyCrawled[] = $href;
+            $crawling[] = $href;
+        }
+
         echo $href."<br>";
     }
+
+    array_shift($crawling);
+
+    foreach($crawling as $site) followLinks($site);
 }
 
 $url = "https://www.bbc.com";
