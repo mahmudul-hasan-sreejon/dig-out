@@ -84,7 +84,7 @@ function getDetails($url) {
     $description = str_replace("\n", "", $description);
     $keywords = str_replace("\n", "", $keywords);
 
-    if(linkExists($url)) echo "$url already exists<br>";
+    if(linkExists($url)) echo "Already exists: $url <br>";
     else if(insertLink($url, $title, $description, $keywords)) echo "Success: $url<br>";
     else echo "Error: Failed to insert $url<br>";
 
@@ -137,7 +137,17 @@ function followLinks($url) {
     foreach($crawling as $site) followLinks($site);
 }
 
-$url = "https://int.soccerway.com/";
+$url = "https://www.stackoverflow.com/";
 followLinks($url);
+
+// $urls = array(
+//     "https://www.quora.com/",
+//     "https://www.stackoverflow.com/",
+// );
+
+// foreach($urls as $url) {
+//     followLinks($url);
+//     echo "<br>";
+// }
 
 ?>
