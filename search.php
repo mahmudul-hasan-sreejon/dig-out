@@ -22,7 +22,7 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 
     <title>Dig-Out</title>
 
-    <link rel="shortcut icon" type="image/ico" href="assets/img/icons/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
 
