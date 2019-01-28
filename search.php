@@ -28,7 +28,6 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 </head>
 
 <body>
-
     <div class="wrapper">
         <div class="header">
             <div class="headerContent">
@@ -68,18 +67,63 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
             <?php
 
             $resultsProvider = new SiteResultsProvider($conn);
-            $pageLimit = 20;
+            $pageSize = 20;
 
             $numResults = $resultsProvider->getNumResults($term);
 
             echo "<p class='resultsCount'>$numResults results found</p>";
 
-            echo $resultsProvider->getResultsHtml($page, $pageLimit, $term);
+            echo $resultsProvider->getResultsHtml($page, $pageSize, $term);
 
             ?>
         </div>
 
-    </div>
+        <div class="paginationContainer">
+            <div class="pageButtons">
+                <div class="pageNumberContainer">
+                    <img src="assets/img/pagination/pageStart.png">
+                </div>
 
+                <?php
+                
+                $pagesToShow = 10;
+                $numPages = ceil($numResults / $pageSize);
+                $pagesLeft = min($pagesToShow, $numPages);
+                $currentPage = $page - floor($pagesToShow / 2);
+
+                if($currentPage < 1) $currentPage = 1;
+
+                if(($currentPage + $pagesLeft) > ($numPages + 1)) {
+                    $currentPage = ($numPages + 1) - $pagesLeft;
+                }
+
+                while($pagesLeft != 0 && $currentPage <= $numPages) {
+                    if($currentPage == $page) {
+                        echo "<div class='pageNumberContainer'>
+                            <img src='assets/img/pagination/pageSelected.png'>
+                            <span class='pageNumber'>$currentPage</span>
+                        </div>";
+                    }
+                    else {
+                        echo "<div class='pageNumberContainer'>
+                            <a href='search.php?term=$term&type=$type&page=$currentPage'>
+                                <img src='assets/img/pagination/page.png'>
+                                <span class='pageNumber'>$currentPage</span>
+                            </a>
+                        </div>";
+                    }
+
+                    $currentPage++;
+                    $pagesLeft--;
+                }
+                
+                ?>
+
+                <div class="pageNumberContainer">
+                    <img src="assets/img/pagination/pageEnd.png">
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
