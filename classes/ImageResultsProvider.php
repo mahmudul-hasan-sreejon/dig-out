@@ -30,7 +30,6 @@ class ImageResultsProvider {
         $query->execute();
 
         $resultsHtml = "<div class='imageResults'>";
-
         while($row = $query->fetch(PDO::FETCH_ASSOC)) {
             $id = $row["id"];
             $imageUrl = $row["imageUrl"];
@@ -45,6 +44,10 @@ class ImageResultsProvider {
             $resultsHtml .= "<div class='gridItem'>
                                 <a href='$imageUrl'>
                                     <img src='$imageUrl'>
+
+                                    <span class='details'>
+                                        $displayText
+                                    </span>
                                 </a>
                             </div>";
         }
