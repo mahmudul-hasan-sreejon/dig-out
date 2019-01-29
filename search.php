@@ -125,5 +125,9 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
