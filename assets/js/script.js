@@ -24,6 +24,8 @@ $(document).ready(function() {
         gutter: 5,
         isInitLayout: false
     });
+
+    $("[data-fancybox]").fancybox();
 });
 
 function loadImage(src, className) {
