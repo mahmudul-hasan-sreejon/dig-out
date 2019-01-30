@@ -15,11 +15,8 @@
 </head>
 
 <body>
-
     <div class="wrapper indexPage">
-
         <div class="mainSection">
-
             <div class="logoContainer">
                 <img src="assets/img/logo.png" title="Dig-Out">
             </div>
@@ -30,10 +27,7 @@
                     <input type="submit" value="Search" class="searchButton">
                 </form>
             </div>
-
         </div>
-
     </div>
-
 </body>
 </html>
