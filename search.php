@@ -23,9 +23,12 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     <meta name="author" content="Mahmudul Hasan Sreejon">
 
     <title>Dig-Out</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/favicon.ico" />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
@@ -132,6 +135,8 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     </div>
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 
     <script type="text/javascript" src="assets/js/script.js"></script>
 </body>

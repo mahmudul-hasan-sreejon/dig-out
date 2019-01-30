@@ -10,8 +10,8 @@
 
     <title>Welcome to Dig-Out</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/favicon.ico" />
 </head>
 
 <body>
