@@ -1,3 +1,5 @@
+let timer;
+
 $(document).ready(function() {
     $(".result").on("click auxclick", function(e) {
         let id = $(this).attr("data-linkId");
@@ -11,11 +13,15 @@ $(document).ready(function() {
     });
 
     let grid = $(".imageResults");
+
+    grid.on("layoutComplete", function() {
+        $(".gridItem img").css("visibility", "visible");
+    });
+
     grid.masonry({
         itemSelector: ".gridItem",
         columnWidth: 200,
         gutter: 5,
-        transitionDuration: 0,
         isInitLayout: false
     });
 });
@@ -25,6 +31,11 @@ function loadImage(src, className) {
 
     image.on("load", function() {
         $("." + className + " a").append(image);
+
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+            $(".imageResults").masonry();
+        }, 500);
     });
 
     image.on("error", function() {
