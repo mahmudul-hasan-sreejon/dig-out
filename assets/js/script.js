@@ -25,7 +25,18 @@ $(document).ready(function() {
         isInitLayout: false
     });
 
-    $("[data-fancybox]").fancybox();
+    $("[data-fancybox]").fancybox({
+        caption : function(instance, item) {
+            let caption = $(this).data('caption') || '';
+            let siteUrl = $(this).data('siteurl') || '';
+    
+            if(item.type === 'image') {
+                caption = (caption.length ? caption + '<br />' : '') + '<a href="' + item.src + '">View image</a>' + '<br />' + '<a href="' + siteUrl + '">View page</a>';
+            }
+    
+            return caption;
+        }
+    });
 });
 
 function loadImage(src, className) {
