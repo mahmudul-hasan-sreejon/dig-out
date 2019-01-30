@@ -26,6 +26,8 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -128,8 +130,6 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 

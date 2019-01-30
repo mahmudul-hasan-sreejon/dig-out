@@ -9,7 +9,30 @@ $(document).ready(function() {
 
         return false;
     });
+
+    let grid = $(".imageResults");
+    grid.masonry({
+        itemSelector: ".gridItem",
+        columnWidth: 200,
+        gutter: 5,
+        transitionDuration: 0,
+        isInitLayout: false
+    });
 });
+
+function loadImage(src, className) {
+    var image = $("<img>");
+
+    image.on("load", function() {
+        $("." + className + " a").append(image);
+    });
+
+    image.on("error", function() {
+        
+    });
+
+    image.attr("src", src);
+}
 
 function increaseLinkClicks(linkId, url, type) {
     $.post("ajax/updateLinkCount.php", {linkId: linkId})
