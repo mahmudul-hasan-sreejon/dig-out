@@ -46,7 +46,6 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                             <button class="searchButton">
                                 <img src="assets/img/icons/search-icon.png">
                             </button>
-
                         </div>
                     </form>
                 </div>
@@ -63,7 +62,6 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                     </li>
                 </ul>
             </div>
-
         </div>
 
         <div class="mainResultsSection">
@@ -81,7 +79,6 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
             $numResults = $resultsProvider->getNumResults($term);
 
             echo "<p class='resultsCount'>$numResults results found</p>";
-
             echo $resultsProvider->getResultsHtml($page, $pageSize, $term);
 
             ?>
@@ -101,10 +98,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                 $currentPage = $page - floor($pagesToShow / 2);
 
                 if($currentPage < 1) $currentPage = 1;
-
-                if(($currentPage + $pagesLeft) > ($numPages + 1)) {
-                    $currentPage = ($numPages + 1) - $pagesLeft;
-                }
+                if(($currentPage + $pagesLeft) > ($numPages + 1)) $currentPage = ($numPages + 1) - $pagesLeft;
 
                 while($pagesLeft != 0 && $currentPage <= $numPages) {
                     if($currentPage == $page) {
@@ -136,6 +130,8 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
     <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
