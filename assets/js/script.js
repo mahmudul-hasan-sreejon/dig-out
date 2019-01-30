@@ -1,17 +1,17 @@
 $(document).ready(function() {
-    $(".result").on("click", function() {
+    $(".result").on("click auxclick", function(e) {
         let id = $(this).attr("data-linkId");
         let url = $(this).attr("href");
 
         // if(!id) alert("data-linkId attribute not found...");
 
-        increaseLinkClicks(id, url);
+        increaseLinkClicks(id, url, e.type);
 
         return false;
     });
 });
 
-function increaseLinkClicks(linkId, url) {
+function increaseLinkClicks(linkId, url, type) {
     $.post("ajax/updateLinkCount.php", {linkId: linkId})
     .done(function(result) {
         if(result != "") {
@@ -19,6 +19,6 @@ function increaseLinkClicks(linkId, url) {
             return;
         }
 
-        window.location.href = url;
+        if(type == "click") window.location.href = url;
     });
 }
