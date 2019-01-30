@@ -1,7 +1,7 @@
 # Dig-Out
 
 An open source web search engine and crawler for finding websites and images.
-It can be found on [this link](https://dig-out.ml/).
+It can be found on [this link](http://dig-out.ml/).
 
 ## Author
 
