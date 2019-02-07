@@ -137,18 +137,6 @@ function followLinks($url) {
     foreach($crawling as $site) followLinks($site);
 }
 
-
-// ==============================================================================
-
-// input sample "https://www.stackoverflow.com/"
-
-// if(isset($_GET["url"])) {
-//     $url = $_GET["url"];
-
-//     followLinks($url);
-// }
-// else echo("You must type a search term...");
-
 ?>
 
 <!DOCTYPE html>
@@ -169,7 +157,7 @@ function followLinks($url) {
         <div class="mainResultsSection">
             <?php
 
-            // input sample "https://www.stackoverflow.com/"
+            // sample ==> https://www.stackoverflow.com/
 
             if(isset($_GET["url"])) {
                 $url = $_GET["url"];
