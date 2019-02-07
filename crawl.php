@@ -137,17 +137,49 @@ function followLinks($url) {
     foreach($crawling as $site) followLinks($site);
 }
 
-$url = "https://www.stackoverflow.com/";
-followLinks($url);
 
-// $urls = array(
-//     "https://www.quora.com/",
-//     "https://www.stackoverflow.com/",
-// );
+// ==============================================================================
 
-// foreach($urls as $url) {
+// input sample "https://www.stackoverflow.com/"
+
+// if(isset($_GET["url"])) {
+//     $url = $_GET["url"];
+
 //     followLinks($url);
-//     echo "<br>";
 // }
+// else echo("You must type a search term...");
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+</head>
+
+<body>
+    <div class="mainSection">
+        <div class="searchContainer">
+            <form action="crawl.php" method="GET">
+                <input type="text" name="url" class="searchBox">
+                <input type="submit" value="Scrap" class="searchButton">
+            </form>
+        </div>
+
+        <div class="mainResultsSection">
+            <?php
+
+            // input sample "https://www.stackoverflow.com/"
+
+            if(isset($_GET["url"])) {
+                $url = $_GET["url"];
+
+                followLinks($url);
+            }
+            else echo("<br>You must type a scrap term...");
+
+            ?>
+        </div>
+    </div>
+</body>
+</html>
