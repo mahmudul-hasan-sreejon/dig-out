@@ -1,6 +1,14 @@
 # Dig-Out
 
-An open source web search engine and crawler for finding websites and images.
+A search engine and crawler for finding websites and images.
+
+![demo](https://raw.githubusercontent.com/mahmudul-hasan-sreejon/notes/main/assets/img/demo.png)
+
+## Technologies & Tools Used
+
+* [PHP](https://www.php.net/)
+* [jQuery](https://jquery.com/)
+* [MySQL](https://www.mysql.com/)
 
 ## Author
 
