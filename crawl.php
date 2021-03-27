@@ -1,7 +1,7 @@
 <?php
 
 include("config.php");
-include("classes/DomDocumentParser.php");
+include("components/DomDocumentParser.php");
 
 $alreadyCrawled = array();
 $crawling = array();

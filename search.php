@@ -1,8 +1,8 @@
 <?php
 
 include("config.php");
-include("classes/SiteResultsProvider.php");
-include("classes/ImageResultsProvider.php");
+include("components/SiteResultsProvider.php");
+include("components/ImageResultsProvider.php");
 
 if(isset($_GET["term"])) $term = $_GET["term"];
 else exit("You must type a search term...");
