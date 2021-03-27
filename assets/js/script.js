@@ -5,8 +5,6 @@ $(document).ready(function() {
 		let id = $(this).attr('data-linkId');
 		let url = $(this).attr('href');
 
-		// if(!id) alert("data-linkId attribute not found...");
-
 		increaseLinkClicks(id, url, e.type);
 
 		return false;

@@ -43,19 +43,21 @@ class ImageResultsProvider {
             else $displayText = $imageUrl;
 
             $count++;
-            $resultsHtml .= "<div class='gridItem image$count'>
-                                <a href='$imageUrl' data-fancybox data-caption='$displayText' data-siteurl='$siteUrl'>
-                                    <script>
-                                    
-                                    $(document).ready(function() {
-                                        loadImage(\"$imageUrl\", \"image$count\");
-                                    });
+            $resultsHtml .= "
+                <div class='gridItem image$count'>
+                    <a href='$imageUrl' data-fancybox data-caption='$displayText' data-siteurl='$siteUrl'>
+                        <script>
+                        
+                        $(document).ready(function() {
+                            loadImage(\"$imageUrl\", \"image$count\");
+                        });
 
-                                    </script>
+                        </script>
 
-                                    <span class='details'>$displayText</span>
-                                </a>
-                            </div>";
+                        <span class='details'>$displayText</span>
+                    </a>
+                </div>
+            ";
         }
         $resultsHtml .= "</div>";
 

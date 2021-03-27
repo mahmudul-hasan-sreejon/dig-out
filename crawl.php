@@ -129,7 +129,6 @@ function followLinks($url) {
 
             getDetails($href);
         }
-        // else return;
     }
 
     array_shift($crawling);
@@ -156,8 +155,6 @@ function followLinks($url) {
 
         <div class="mainResultsSection">
             <?php
-
-            // sample ==> https://www.stackoverflow.com/
 
             if(isset($_GET["url"])) {
                 $url = $_GET["url"];

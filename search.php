@@ -80,7 +80,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                 $resultsProvider = new ImageResultsProvider($conn);
                 $pageSize = 30;
             }
-            
+
             $numResults = $resultsProvider->getNumResults($term);
 
             echo "<p class='resultsCount'>$numResults results found</p>";
@@ -94,9 +94,8 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                 <div class="pageNumberContainer">
                     <img src="assets/img/pagination/pageStart.png">
                 </div>
-
                 <?php
-                
+
                 $pagesToShow = 10;
                 $numPages = ceil($numResults / $pageSize);
                 $pagesLeft = min($pagesToShow, $numPages);
@@ -124,9 +123,8 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                     $currentPage++;
                     $pagesLeft--;
                 }
-                
-                ?>
 
+                ?>
                 <div class="pageNumberContainer">
                     <img src="assets/img/pagination/pageEnd.png">
                 </div>
